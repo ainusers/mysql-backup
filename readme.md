@@ -17,6 +17,8 @@
 	2.5. 查看二进制binlog文件内容 (两种方式均可，一个是sql语句，一个是命令)<br/>
 		show binlog events in 'mysql-bin.000007';<br/>
 		./mysqlbinlog /data/mysql/mysql-bin.000003<br/>
+  	2.5.1. 查看binlog文件内容中的sql语句
+   		mysqlbinlog --database=db --base64-output=decode-rows -v /var/lib/mysql/binlog.000826 --result-file=output.sql
 	2.6. 将mysql相关命令，添加到直接可执行的系统命令当中 (只需要替换bin/后面的命令文件即可)<br/>
 		ln -s  /usr/local/mysql/bin/mysql  /usr/bin
 
